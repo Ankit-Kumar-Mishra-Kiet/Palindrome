@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include<math.h>
+
+void prime(int r)
+{
+    int i,count=0;
+    for(i=2;i<r/2;i++)
+    {if(r%i==0)
+    {
+        count++;
+        break;
+    }
+    }
+    if  (count==0)
+    printf("It is prime");
+    else
+    printf("It is not a prime");
+    
+}
+
+void arm(int r)
+{ int c=0,s,sum=0;
+while(r>0)
+{
+    c++;
+    r=r/10;
+}
+int ori;
+ori=r;
+while(r>0)
+{
+    s=r%10;
+ sum=sum+pow(s,c);
+    
+}
+
+if(ori==sum)
+printf("it is armstrong");
+
+    else 
+    printf("it is not an armstrong");
+}
+
+
+void palin(int r)
+{
+    int s,rev=0;
+    int ori;
+    ori=r;
+    while(r>0)
+    {
+        s=r%10;
+        rev=rev*10+s;
+        r=r/10;
+    }
+    if(ori==rev)
+    printf("it is palindrome");
+    else
+    printf("It is not a palindrome");
+}
+    
+int main()
+{
+ int n,num;
+ printf("enter your choice \n1.Test for prime\n2.Test for armstrong\n3.Test for palindrome\n\n");
+ scanf("%d",&n);
+ printf("\nEnter your number :::: ");
+ scanf("%d",&num);
+ switch (n)
+{case 1: prime(num);
+         break;
+case 2: arm(num);
+        break;
+case 3: palin(num);
+       break;
+       
+    
+}
+return 0;
+
+}
